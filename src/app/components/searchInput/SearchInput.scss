@@ -1,0 +1,36 @@
+@import "../../main.scss";
+
+.search-input {
+  position: relative;
+  z-index: 3;
+  margin:  25px 5px;
+  padding: 0 34px;
+  width: 1360px;
+  height: 60px;
+  border-radius: 50px;
+  border: 1px solid $color-gray;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: $fz-strong;
+
+  &::placeholder {
+    font-size: $fz-strong;
+    line-height: normal;
+    color: $color-dark-gray;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+  &:focus-visible, &:active {
+    border: 1px solid $color-dark-gray;
+  }
+  &:disabled {
+
+    background-color: $color-light-gray;
+
+    &::placeholder {
+      color: #817e7e;
+    }  
+  }
+}

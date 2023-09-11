@@ -1,0 +1,43 @@
+@import "../../main.scss";
+
+.popup-sl-wrapper {
+  position: relative;
+  z-index: 2;
+  margin:  -85px 5px;
+  width: 1360px;
+  min-height: 60px;
+  padding: 60px 34px 0 12px;
+  border-radius: 50px;
+  background-color: #fff;
+  border: 1px solid $color-gray;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: $fz-strong;
+}
+
+.found-list__item{
+  margin-top: 6px;
+  list-style-type: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #E4DBDB;
+  cursor: pointer;
+
+  &:first-child {
+    margin-top: 12px;
+  }
+  &:last-child {
+    margin-bottom: 18px;
+  }
+  
+  &:hover {
+    background-color: $color-light-gray;
+  }
+}
+
+.not-found-msg {
+  margin: 12px 0 18px 0;
+  list-style-type: none;
+  padding: 10px 18px;
+  cursor: default;
+}
