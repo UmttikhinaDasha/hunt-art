@@ -35,23 +35,23 @@ const SearchComponent:FC<SearchProps> = (props) => {
 
   return (
     <div className="search">
-        <div className="search__container">
-          <div onPointerDown={e => onChangeFocus(true)}
-              ref={searchRef}
-              className="search__block">
+      <div className="search__container">
+        <div onPointerDown={e => onChangeFocus(true)}
+            ref={searchRef}
+            className="search__block">
 
-            <SearchInput className="search__input" 
-                        placeholder="Введите Ваш запрос..." 
-                        disabled={false} 
-                        onSetSearchValue={onSetSearchValue} 
-                        isPopupOpen={isPopupOpen}/>
+          <SearchInput className="search__input" 
+                      placeholder="Введите Ваш запрос..." 
+                      disabled={false} 
+                      onSetSearchValue={onSetSearchValue} 
+                      isPopupOpen={isPopupOpen}/>
 
-            <PopupSearchList foundValues={foundValues} 
-                            isPopupOpen={isPopupOpen}/>
-          </div>
-          <button className="filter-btn"></button>
+          <PopupSearchList foundValues={foundValues} 
+                          isPopupOpen={isPopupOpen}/>
         </div>
+        <button className="filter-btn"></button>
       </div>
+    </div>
   )
 }
 

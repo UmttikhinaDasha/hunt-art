@@ -3,7 +3,7 @@ import { useDebounce } from "@uidotdev/usehooks"
 import "./App.scss";
 import Header from "./components/header/Header"
 import FeedsSwitcher from "./components/feedsSwitcher/FeedsSwitcher";
-import SearchComponent from "./components/searchComponent/searchComponent";
+import SearchComponent from "./components/searchComponent/SearchComponent";
 
 function App() {
 
