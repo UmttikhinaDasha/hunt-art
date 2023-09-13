@@ -3,6 +3,7 @@ import { useDebounce } from "@uidotdev/usehooks"
 import "./App.scss";
 import Header from "./components/header/Header"
 import FeedsSwitcher from "./components/feedsSwitcher/FeedsSwitcher";
+import SearchComponent from "./components/searchComponent/searchComponent";
 
 function App() {
 
@@ -32,12 +33,13 @@ function App() {
 
   return (
     <>
-      <Header onSetSearchValue={onSetSearchValue}
-              onSetIsPopupOpen={onSetIsPopupOpen}
-              foundValues={foundContent} 
-              isPopupOpen={isPopupOpen} />
+      <Header/>
+      <SearchComponent onSetSearchValue={onSetSearchValue}
+                       onSetIsPopupOpen={onSetIsPopupOpen}
+                       foundValues={foundContent} 
+                       isPopupOpen={isPopupOpen}/>
       <FeedsSwitcher feedsNames={["новые работы", "популярное", "подписки"]}/>
-      <div style={{marginTop: "65px"}}>
+      <div>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat odit, reiciendis mollitia qui distinctio dolores voluptate veniam id delectus quasi quo totam dolor provident fuga facere saepe, nostrum ut sapiente dolorum. Vel odio vitae, quos consequatur perferendis debitis a error dolorum! Voluptates unde voluptas, assumenda iste vitae quos blanditiis a nemo architecto dolorum repudiandae? Nisi eaque eos autem unde accusantium odit tempora reiciendis, voluptate quaerat perferendis deleniti quia cum repellendus reprehenderit saepe aperiam laborum? Inventore modi distinctio rem id, ipsam a cumque voluptate dolore laboriosam atque eius rerum at vero tenetur ratione ipsa porro deleniti voluptates magni quo nesciunt iste?
       </div>
       <div>

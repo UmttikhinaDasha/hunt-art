@@ -46,7 +46,7 @@
 @media (min-width: 480px) {
 
   .popup-sl-wrapper {
-    padding: $search-height-sm 24px 0 12px;
+    padding: $search-height-sm 12px 0 12px;
   }
 }
 
@@ -62,7 +62,7 @@
   .popup-sl-wrapper {
     width: calc(100% - 95px);
     min-height: $search-height-md;
-    padding: $search-height-md 34px 0 12px;
+    padding-top: $search-height-md; // 34px 0 12px;
     font-size: $fz-strong;
   }
 

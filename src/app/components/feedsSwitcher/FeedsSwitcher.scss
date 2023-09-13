@@ -1,7 +1,8 @@
 @import "../../main.scss";
 .switcher {
   position: fixed;
-  margin-top: 35px;
+  top: 100px;
+  //margin-top: 150px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -42,13 +43,13 @@
 
 @media (min-width: 520px) {
   .switcher {
-    margin-top: -15px;
+    top: 50px;
   }
 }
 
 @media (min-width: 768px) {
   .switcher {
-    margin-top: -5px;
+    top: 60px;
   }
 
   .swither__feed-btn {
