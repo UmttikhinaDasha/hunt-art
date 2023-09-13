@@ -2,7 +2,13 @@ import {FC, useEffect, useState, useRef} from "react";
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import "./Menu.scss";
 
-const Menu = () => {
+interface MenuProps {
+  links?: string[];
+}
+
+const Menu:FC<MenuProps> = (props) => {
+
+  const {links} = props;
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const burgerRef = useRef(null);
@@ -27,6 +33,22 @@ const Menu = () => {
 
   const classNameActive = isOpen ?  ' active' : '';
 
+  const renderList = () => {
+    if (links?.length && links?.length > 0) {
+      return (
+        links?.map((link, i) => (
+          <li key={i}>
+              <a href="#" className="header__link">{link}</a>
+          </li>
+        ))
+      )
+    } else {
+      return (
+        <div>Что-то пошло не так :c</div>
+      )
+    }
+  }
+
   return (
     <>
       <div className={`header__burger ${classNameActive}`}
@@ -36,12 +58,7 @@ const Menu = () => {
       </div>
       <nav className={`header__menu ${classNameActive}`}>
         <ul className="header__list">
-          <li>
-            <a href="#" className="header__link">Профиль</a>
-          </li>
-          <li>
-            <a href="#" className="header__link">Сообщения</a>
-          </li>
+          {renderList()}
         </ul>
       </nav>
     </>

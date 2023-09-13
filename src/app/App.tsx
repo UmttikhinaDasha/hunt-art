@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks"
 import "./App.scss";
 import Header from "./components/header/Header"
+import FeedsSwitcher from "./components/feedsSwitcher/FeedsSwitcher";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
               onSetIsPopupOpen={onSetIsPopupOpen}
               foundValues={foundContent} 
               isPopupOpen={isPopupOpen} />
+      <FeedsSwitcher feedsNames={["новые работы", "популярное", "подписки"]}/>
       <div style={{marginTop: "65px"}}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat odit, reiciendis mollitia qui distinctio dolores voluptate veniam id delectus quasi quo totam dolor provident fuga facere saepe, nostrum ut sapiente dolorum. Vel odio vitae, quos consequatur perferendis debitis a error dolorum! Voluptates unde voluptas, assumenda iste vitae quos blanditiis a nemo architecto dolorum repudiandae? Nisi eaque eos autem unde accusantium odit tempora reiciendis, voluptate quaerat perferendis deleniti quia cum repellendus reprehenderit saepe aperiam laborum? Inventore modi distinctio rem id, ipsam a cumque voluptate dolore laboriosam atque eius rerum at vero tenetur ratione ipsa porro deleniti voluptates magni quo nesciunt iste?
       </div>

@@ -1,0 +1,63 @@
+@import "../../main.scss";
+.switcher {
+  position: fixed;
+  margin-top: 35px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+
+.swither__feed-btn {
+  width: calc(100vw / 3);
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 35px;
+  border: 1px solid $clr-border;
+  background: $base-bg-clr;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  &.active {
+    background-color: $clr-green;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $clr-gray;
+  }
+  &.active:hover {
+    background-color: $clr-dirty-green;
+  }
+  &:focus-visible {
+    border-color: $clr-dark-gray;
+  }
+  &:active{
+    background-color: $clr-green;
+  }
+  &:disabled{
+    background-color: $clr-disabled;
+  }
+}
+
+@media (min-width: 520px) {
+  .switcher {
+    margin-top: -15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .switcher {
+    margin-top: -5px;
+  }
+
+  .swither__feed-btn {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .switcher {
+    margin-top: 0px;
+  }
+}

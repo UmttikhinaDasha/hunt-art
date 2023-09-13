@@ -36,6 +36,14 @@ const Header:FC<HeaderProps> = (props) => {
 
   return (
     <div className="wrapper">
+      <div className="header">
+        <div className="header__container">
+          <div className="header__body">
+            <a href="#" className="header__logo">HuntArt</a>
+            <Menu links={['Профиль', 'Сообщения']}/>
+          </div>
+        </div>        
+      </div>
       <div className="search">
         <div className="search__container">
           <div onPointerDown={e => onChangeFocus(true)}
@@ -54,14 +62,7 @@ const Header:FC<HeaderProps> = (props) => {
           <button className="filter-btn"></button>
         </div>
       </div>
-      <div className="header">
-        <div className="header__container">
-          <div className="header__body">
-            <a href="#" className="header__logo">HuntArt</a>
-            <Menu/>
-          </div>
-        </div>        
-      </div>
+      
     </div>
     
   )
