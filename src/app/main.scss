@@ -65,14 +65,35 @@ select {
 }
 
 //Variables
+$fz-medium: 18px;
 $fz-strong: 22px;
+$fz-logo: 20px;
+$fz-logo-lg: 24px;
 
-$color-light-gray: #EFE9E9;
-$color-gray: #E4DBDB;
-$color-placeholder-disabled: #817e7e;
-$color-dark-gray: #201E1E;
-$color-green: #A2D4A4;
-$color-yellow: #E4E67E;
+$clr-light-gray: #EFE9E9;
+$clr-gray: #E4DBDB;
+$clr-border: #cecaca;
+$clr-placeholder-disabled: #817e7e;
+$clr-dark-gray: #201E1E;
+$clr-green: #A2D4A4;
+$clr-yellow: #E4E67E;
+
+$min-width: 360px;
+$filter-btn-width-sm: 90px;
+$base-bg-clr: #fff;
+
+$search-height-sm: 38px;
+$search-height-md: 45px;
+
+$gaps-width: 60px;
+$logo-width: 100px;
+$menu-width: 200px;
+$base-height: 50px;
+
+$header-height-sm: 50px;
+$header-height-md: 60px;
+$header-height-lg: 65px;
+
 
 //Fonts
 

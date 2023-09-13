@@ -1,0 +1,116 @@
+@import "../../main.scss";
+
+.header__list {
+  display: flex;
+  //position: relative;
+  z-index: 4;
+
+  & li {
+    margin-left: 20px;
+  }
+}
+
+.header__link {
+  text-decoration: none;
+  font-size: $fz-medium;
+  font-weight: 600;
+  color: #000;
+}
+
+.header__burger {
+  display: none;
+}
+
+.header__menu {
+  z-index: 3; //!
+}
+
+@media (max-width: 768px) {
+
+  .header__burger {
+    display: block;
+    position: relative;
+    z-index: 40;
+    width: 35px;
+    height: 25px;
+
+    & span {
+      position: absolute;
+      background-color: #000;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      top: 10.5px;
+      border-radius: 20%;
+    }
+
+    &::before, &::after {
+      content: '';
+      background-color: #000;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 20%;
+      left: 0;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+
+    &.active::before {
+      transform: rotate(-45deg);
+      top: 10.5px;
+      transition: all 0.3s ease 0s;
+    }
+    &.active::after {
+      transform: rotate(-45deg);
+      bottom: 10.5px;
+      transition: all 0.3s ease 0s;
+    }
+    &.active span {
+      display: none;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  .header__burger.active::before {
+    transform: rotate(45deg);
+  }
+
+  .header__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 65px 5px 10px 5px;
+    border: 1px solid #DAD7D7;
+    background-color: #FFF;
+    overflow: auto;
+    //z-index: 3; //!
+
+    &.active {
+      top: 0;
+      transition: all 0.4s ease 0s;
+    }
+  }
+
+  .header__list {
+    display: block;
+
+    & li {
+      margin-left: 0px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .header__link {
+      font-size: 20px;
+    }
+}

@@ -1,25 +1,26 @@
 @import "../../main.scss";
 
 .popup-sl-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0px;
   z-index: 2;
-  margin:  -85px 5px;
-  width: 1360px;
-  min-height: 60px;
-  padding: 60px 34px 0 12px;
-  border-radius: 50px;
-  background-color: #fff;
-  border: 1px solid $color-gray;
-  background: #FFF;
+  margin:  5px 10px;
+  min-width: 280px;
+  width: calc(100% - $filter-btn-width-sm);
+  min-height: $search-height-sm;
+  padding: $search-height-sm 24px 0 24px;
+  border-radius: 30px;
+  background-color: $base-bg-clr;
+  border: 1px solid $clr-gray;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-size: $fz-strong;
+  font-size: 16px;
 }
 
 .found-list__item{
   margin-top: 6px;
   list-style-type: none;
-  padding: 10px 18px;
-  border-radius: 30px;
+  padding: 5px 9px;
+  border-radius: 20px;
   border: 1px solid #E4DBDB;
   cursor: pointer;
 
@@ -27,17 +28,58 @@
     margin-top: 12px;
   }
   &:last-child {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
   
   &:hover {
-    background-color: $color-light-gray;
+    background-color: $clr-light-gray;
   }
 }
 
 .not-found-msg {
-  margin: 12px 0 18px 0;
+  margin: 12px 0 12px 0;
   list-style-type: none;
-  padding: 10px 18px;
+  padding: 5px 9px;
   cursor: default;
+}
+
+@media (min-width: 480px) {
+
+  .popup-sl-wrapper {
+    padding: $search-height-sm 24px 0 12px;
+  }
+}
+
+@media (min-width: 720px) {
+
+  .popup-sl-wrapper {
+    font-size: $fz-medium;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .popup-sl-wrapper {
+    width: calc(100% - 95px);
+    min-height: $search-height-md;
+    padding: $search-height-md 34px 0 12px;
+    font-size: $fz-strong;
+  }
+
+  .found-list__item {
+    margin-top: 6px;
+    padding: 10px 18px;
+  
+    &:first-child {
+      margin-top: 12px;
+    }
+    &:last-child {
+      margin-bottom: 18px;
+    }
+  }
+
+  .not-found-msg {
+    margin: 12px 0 18px 0;
+    padding: 10px 18px;
+  }
 }

@@ -1,6 +1,8 @@
 import {FC, useEffect, useRef} from "react";
 import SearchInput from "../searchInput/SearchInput";
 import PopupSearchList from "../popupSearchList/PopupSearchList";
+import Menu from "../menu/Menu";
+import "./Header.scss"
 
 export interface HeaderProps {
   onSetSearchValue?(value?: string): void;
@@ -13,7 +15,7 @@ const Header:FC<HeaderProps> = (props) => {
 
   const {onSetSearchValue, onSetIsPopupOpen, foundValues, isPopupOpen} = props;
 
-  const searchEl = useRef(null);
+  const searchRef = useRef(null);
 
   const onChangeFocus = (value: boolean) => {
     onSetIsPopupOpen?.(value);
@@ -22,8 +24,8 @@ const Header:FC<HeaderProps> = (props) => {
   useEffect(() => {
     
       const onClick = (e : MouseEvent) => {
-        if (searchEl && searchEl?.current) {
-          if (!searchEl?.current?.contains(e.target)) {
+        if (searchRef && searchRef?.current) {
+          if (!searchRef?.current?.contains(e.target)) {
             onChangeFocus(false);
          }
         }
@@ -33,18 +35,35 @@ const Header:FC<HeaderProps> = (props) => {
   }, []);
 
   return (
-    <div onPointerDown={e => onChangeFocus(true)}
-         ref={searchEl}>
+    <div className="wrapper">
+      <div className="search">
+        <div className="search__container">
+          <div onPointerDown={e => onChangeFocus(true)}
+              ref={searchRef}
+              className="search__block">
 
-      <SearchInput className="search-input" 
-                   placeholder="Введите Ваш запрос..." 
-                   disabled={false} 
-                   onSetSearchValue={onSetSearchValue} 
-                   isPopupOpen={isPopupOpen}/>
+            <SearchInput className="search__input" 
+                        placeholder="Введите Ваш запрос..." 
+                        disabled={false} 
+                        onSetSearchValue={onSetSearchValue} 
+                        isPopupOpen={isPopupOpen}/>
 
-      <PopupSearchList foundValues={foundValues} 
-                       isPopupOpen={isPopupOpen}/>
+            <PopupSearchList foundValues={foundValues} 
+                            isPopupOpen={isPopupOpen}/>
+          </div>
+          <button className="filter-btn"></button>
+        </div>
+      </div>
+      <div className="header">
+        <div className="header__container">
+          <div className="header__body">
+            <a href="#" className="header__logo">HuntArt</a>
+            <Menu/>
+          </div>
+        </div>        
+      </div>
     </div>
+    
   )
 }
 
