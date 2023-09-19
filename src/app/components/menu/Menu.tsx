@@ -38,7 +38,7 @@ const Menu:FC<MenuProps> = (props) => {
       return (
         links?.map((link, i) => (
           <li key={i}>
-              <a href="#" className="header__link">{link}</a>
+              <a href="#" className="header__link" tabIndex={0}>{link}</a>
           </li>
         ))
       )

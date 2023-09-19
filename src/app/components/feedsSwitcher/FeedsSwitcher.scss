@@ -2,20 +2,22 @@
 .switcher {
   position: fixed;
   top: 100px;
-  //margin-top: 150px;
+  //margin-top: 1500px;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
+  z-index: 1;
 }
 
 .swither__feed-btn {
+  min-width: 120px;
   width: calc(100vw / 3);
   font-size: 14px;
   font-weight: 600;
   min-height: 35px;
-  border: 1px solid $clr-border;
+  border: 2px solid $clr-border;
   background: $base-bg-clr;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
@@ -59,6 +61,6 @@
 
 @media (min-width: 1024px) {
   .switcher {
-    margin-top: 0px;
+    margin-top: 5px;
   }
 }

@@ -7,7 +7,7 @@ const Header = () => {
       <div className="header">
         <div className="header__container">
           <div className="header__body">
-            <a href="#" className="header__logo">HuntArt</a>
+            <a href="#" className="header__logo"  tabIndex={0}>HuntArt</a>
             <Menu links={['Профиль', 'Сообщения']}/>
           </div>
         </div>        
