@@ -1,0 +1,42 @@
+@import "../../main.scss";
+
+.modal__info {
+  width: 480px;
+  min-height: 560px;
+  //background-color: $clr-green;
+  overflow: visible;
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  &__username {
+    font-size: $fz-strong;
+    font-weight: 400;
+  
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__toggle-comm-block-btn {
+    font-size: $fz-medium;
+  }
+}
+
+.modal__support-block {
+  display: flex;
+  font-size: $fz-medium;
+  margin-bottom: 8px;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+
+  & span {
+    font-weight: 600;
+  }
+}

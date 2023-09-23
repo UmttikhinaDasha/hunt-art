@@ -83,6 +83,8 @@ $clr-active-text: #06890B;
 
 
 $min-width: 360px;
+
+//HEADER CONSTS
 $filter-btn-width-sm: 90px;
 
 $search-height-sm: 38px;
@@ -97,9 +99,101 @@ $header-height-sm: 50px;
 $header-height-md: 60px;
 $header-height-lg: 65px;
 
+$feeds-switcher-height: 35px;
+//END HEADER CONSTS
 
 //Fonts
 
 * {
   font-family: 'Overpass Mono', monospace;
+}
+
+
+%flex-row-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%base-elem-styles {
+  border: 2px solid $clr-border;
+  background-color: $base-bg-clr;
+}
+
+%shadow-filter {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+%link {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+%btn {
+  @extend %base-elem-styles;
+  @extend %shadow-filter;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $clr-gray;
+  }
+  &.active:hover {
+    background-color: $clr-dirty-green;
+  }
+  &:focus-visible {
+    border-color: $clr-dark-gray;
+  }
+  &:active{
+    background-color: $clr-green;
+  }
+  &:disabled{
+    background-color: $clr-disabled;
+  }
+}
+
+%rounded-btn {
+  @extend %btn;
+  border-radius: 50px;
+}
+
+.icon-btn {
+  @extend %rounded-btn;
+  width: 40px;
+  height: 40px;
+  // background-repeat: no-repeat;
+  // background-size: 26px;
+  // background-position: 6px center;
+
+  // &:active{
+  //   background-color: $base-bg-clr;
+  //   color: $clr-green;
+  // }
+}
+
+.icon {
+  font-size: 24px;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.text-btn {
+  @extend %rounded-btn;
+  padding: 0 12px;
+  height: 40px;
+  font-size: $fz-medium;
+}
+
+
+.active {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

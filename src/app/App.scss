@@ -1,1 +1,29 @@
 @import "./main.scss";
+
+.tools-wrapper {
+ position: fixed;
+ height: 2 * $header-height-sm + $feeds-switcher-height;
+ top: 0;
+ left: 0;
+ width: 100%;
+ @extend %base-elem-styles;
+ z-index: 1;
+}
+
+@media (min-width: 520px) {
+  .tools-wrapper {
+    height: $header-height-sm + $feeds-switcher-height;
+   }
+}
+
+@media (min-width: 768px) {
+  .tools-wrapper {
+    height: $header-height-md + $feeds-switcher-height;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tools-wrapper {
+    height: $header-height-lg + $feeds-switcher-height;
+  }
+}

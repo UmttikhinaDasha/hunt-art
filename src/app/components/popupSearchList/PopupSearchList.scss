@@ -3,16 +3,18 @@
 .popup-sl-wrapper {
   position: absolute;
   top: 0px;
-  z-index: 3;
+  z-index: 2;
   margin:  5px 10px;
+  padding: $search-height-sm 24px 0 24px;
+
+  @extend %base-elem-styles;
+  @extend %shadow-filter;
+  border-radius: 30px;
+
   min-width: 280px;
   width: calc(100% - $filter-btn-width-sm);
   min-height: $search-height-sm;
-  padding: $search-height-sm 24px 0 24px;
-  border-radius: 30px;
-  background-color: $base-bg-clr;
-  border: 1px solid $clr-gray;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  
   font-size: 16px;
 }
 

@@ -5,10 +5,16 @@ import Header from "./components/header/Header"
 import FeedsSwitcher from "./components/feedsSwitcher/FeedsSwitcher";
 import SearchComponent from "./components/searchComponent/SearchComponent";
 import {Gallery} from "./components/gallery/Gallery";
+import ArtInfoModalWindow from "./components/artInfoModalWindow/ArtInfoModalWindow";
 
 function App() {
 
+  //data-block-----------------------------------------------------------
   const tags = ['#uch', '#fantasy', '#modern', '#vampire', '#ciberpunk'];
+  //end-data-block-------------------------------------------------------
+  
+
+  //search-block---------------------------------------------------------
   const [searchValue, setSearchValue] = useState<string>('');
   const [isPopupOpen, setIsPopupOpen] = useState<boolean>(false);
 
@@ -31,16 +37,31 @@ function App() {
       return tags.filter(tag => tag.indexOf(searchValue) > -1);
     }
   }
+  //end-search-block-----------------------------------------------------
+
+
+  //modal-block----------------------------------------------------------
+  const [imgSrc, setModalOpen] = useState<string>(''); //"./src/app/resources/images/default_hor.jpg"
+  const debounceImgSrc = useDebounce(imgSrc, 200);
+
+  const onSetModalOpen = (imgSrc : string) => {
+    setModalOpen(imgSrc);
+  }
+  //end-modal-block------------------------------------------------------
 
   return (
     <>
-      <Header/>
-      <SearchComponent onSetSearchValue={onSetSearchValue}
-                       onSetIsPopupOpen={onSetIsPopupOpen}
-                       foundValues={foundContent} 
-                       isPopupOpen={isPopupOpen}/>
-      <FeedsSwitcher feedsNames={["новые работы", "популярное", "подписки"]}/>
-      <Gallery/>
+      <div className="tools-wrapper">
+        <Header/>
+        <SearchComponent onSetSearchValue={onSetSearchValue}
+                        onSetIsPopupOpen={onSetIsPopupOpen}
+                        foundValues={foundContent} 
+                        isPopupOpen={isPopupOpen}/>
+        <FeedsSwitcher feedsNames={["новые работы", "популярное", "подписки"]}/>
+      </div>
+      
+      <Gallery onSetModalOpen={onSetModalOpen}/>
+      <ArtInfoModalWindow imgSrc={debounceImgSrc}/>
     </>
   )
 }

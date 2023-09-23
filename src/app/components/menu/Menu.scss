@@ -2,7 +2,7 @@
 
 .header__list {
   display: flex;
-  //position: relative;
+  position: relative;
   z-index: 4;
 
   & li {
@@ -11,7 +11,7 @@
 }
 
 .header__link {
-  text-decoration: none;
+  @extend %link;
   font-size: $fz-medium;
   font-weight: 600;
   color: #000;
@@ -22,7 +22,7 @@
 }
 
 .header__menu {
-  z-index: 3; //!
+  z-index: 4; //!
 }
 
 @media (max-width: 768px) {
@@ -58,7 +58,7 @@
     }
     &::after {
       bottom: 0;
-    }
+    }  
 
     &.active::before {
       transform: rotate(-45deg);
@@ -87,10 +87,10 @@
     width: 100%;
     height: 100%;
     padding: 65px 5px 10px 5px;
-    border: 1px solid #DAD7D7;
-    background-color: #FFF;
+    border: 2px solid $clr-border;
+    background: $base-bg-clr;
     overflow: auto;
-    //z-index: 3; //!
+    z-index: 6; //!
 
     &.active {
       top: 0;

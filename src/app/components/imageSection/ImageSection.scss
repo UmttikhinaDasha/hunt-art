@@ -1,0 +1,30 @@
+@import "../../main.scss";
+
+.modal__img-wrapper {
+  height: 560px;
+  min-width: 200px;
+  max-width: 940px;
+  filter: drop-shadow(0 0 4px #a4a2a2ce)
+}
+
+.modal__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.modal__btns-container {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  margin: -20px 0 0 -20px;
+  z-index: 1;
+}
+
+.modal__like-btn {
+  //background-image: url("../../resources/images/heart-solid.png");
+  //background-color: #000;
+}
