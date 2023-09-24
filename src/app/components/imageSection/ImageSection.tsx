@@ -25,6 +25,7 @@ const ImageSection:FC<ImageSectionProps> = (props) => {
         </button>
         <button className="modal__subscribe-btn text-btn" tabIndex={2}>Подписаться</button>
       </div>
+      <div className="modal__tags">#fantasy #art #witcher #forest</div>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 @import "../../main.scss";
 
 .modal__img-wrapper {
-  height: 560px;
+  height: 540px;
   min-width: 200px;
   max-width: 940px;
   filter: drop-shadow(0 0 4px #a4a2a2ce)
@@ -27,4 +27,8 @@
 .modal__like-btn {
   //background-image: url("../../resources/images/heart-solid.png");
   //background-color: #000;
+}
+.modal__tags {
+  margin-top: 10px;
+  text-align: left;
 }

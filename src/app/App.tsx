@@ -41,11 +41,17 @@ function App() {
 
 
   //modal-block----------------------------------------------------------
-  const [imgSrc, setModalOpen] = useState<string>(''); //"./src/app/resources/images/default_hor.jpg"
+  const [modalClose, setModalClose] = useState<boolean>(false);
+  const [imgSrc, setImgSrc] = useState<string>(''); //"./src/app/resources/images/default_hor.jpg"
   const debounceImgSrc = useDebounce(imgSrc, 200);
 
   const onSetModalOpen = (imgSrc : string) => {
-    setModalOpen(imgSrc);
+    setImgSrc(imgSrc);
+    setModalClose(false);
+  }
+
+  const onSetModalClose = () => {
+    setModalClose(true);
   }
   //end-modal-block------------------------------------------------------
 
@@ -61,7 +67,7 @@ function App() {
       </div>
       
       <Gallery onSetModalOpen={onSetModalOpen}/>
-      <ArtInfoModalWindow imgSrc={debounceImgSrc}/>
+      {modalClose ? null : <ArtInfoModalWindow imgSrc={debounceImgSrc} onSetModalClose={onSetModalClose}/>}
     </>
   )
 }

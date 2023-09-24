@@ -16,9 +16,9 @@
 .modal__dialog {
   display: inline-block;
   width: auto;
-  max-height: 90vh;
+  max-height: 92vh;
   max-width: 1360px;
-  margin: 40px;
+  margin: 30px 40px 40px 40px;
   overflow-y: auto;
   text-align: right;
 
@@ -30,11 +30,27 @@
 .modal__content {
   position: relative;
   width: 100%;
+  padding: 0 30px 0px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+}
+
+.modal__row-container {
+  position: relative;
+  width: 100%;
   padding: 0 30px 20px 30px;
 
   @extend %flex-row-container;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: start;
   gap: 26px;
 }
 
@@ -47,4 +63,12 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+.modal__tags {
+  //text-align: left;
+}
+
+.modal__description {
+  width: ;
 }

@@ -7,13 +7,14 @@
     background: $base-bg-clr;
     //min-height: 506px;
     //height: 506px;
-    height: 496px;
+    //height: 496px;
+    height: 486px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: end;
 
     &.auction {
-      height: 448px;
+      height: 438px;
 
       & .modal__comments-list {
         flex-direction: column;
@@ -107,6 +108,6 @@
 
   &__start-bid-btn, &__min-incr-btn, &__auto-buy-btn {
     font-size: 12px;
-    margin-left: 6px;
+    //margin-left: 6px;
   }
 }
