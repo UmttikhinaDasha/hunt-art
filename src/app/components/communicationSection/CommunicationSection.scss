@@ -1,0 +1,23 @@
+@import "../../main.scss";
+
+.modal__communication-section {
+  min-width: 320px;
+}
+
+.modal__toggle-comm-block-btn {
+  @include text-btn(40px);
+  margin-bottom: 12px;
+}
+
+.modal__support-block {
+  display: flex;
+  font-size: 16px;
+  margin-bottom: 8px;
+  align-items: center;
+  gap: 18px;
+  justify-content: center;
+
+  & span {
+    font-weight: 600;
+  }
+}

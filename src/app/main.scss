@@ -109,6 +109,7 @@ $feeds-switcher-height: 35px;
 }
 
 
+
 %flex-row-container {
   display: flex;
   flex-direction: row;
@@ -166,14 +167,6 @@ $feeds-switcher-height: 35px;
   @extend %rounded-btn;
   width: 40px;
   height: 40px;
-  // background-repeat: no-repeat;
-  // background-size: 26px;
-  // background-position: 6px center;
-
-  // &:active{
-  //   background-color: $base-bg-clr;
-  //   color: $clr-green;
-  // }
 }
 
 .icon {
@@ -187,8 +180,18 @@ $feeds-switcher-height: 35px;
   padding: 0 12px;
   height: 40px;
   font-size: $fz-medium;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 }
 
+@mixin text-btn($height: 40px) {
+  @extend %rounded-btn;
+  padding: 0 12px;
+  height: $height;
+  font-size: $fz-medium;
+}
 
 .active {
   display: block;

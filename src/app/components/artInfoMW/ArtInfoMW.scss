@@ -1,0 +1,25 @@
+@import "../../main.scss";
+
+
+.modal__description-section {
+  text-align: justify;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 820px) {
+
+  .modal__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 550px auto;
+    grid-auto-flow: row dense;
+    align-items: start;
+    gap: 18px;
+  }
+
+  .modal__description-section {
+    grid-column: span 2;
+    justify-self: center;
+    margin-bottom: 0;
+  }
+}

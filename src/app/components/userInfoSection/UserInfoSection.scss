@@ -1,0 +1,71 @@
+@import "../../main.scss";
+
+.user__container {
+  padding: 14px;
+}
+
+.userinfosection {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  &__avatar-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: $clr-green;
+  }
+
+  &__username {
+    color: black;
+    font-weight: 400;
+    font-size: 22px;
+  }
+}
+
+.avatar-container, .btns-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rating__value, .followers__value {
+  margin-left: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -.8px;
+}
+
+.user__description {
+  padding: 6px;
+}
+
+@media (max-width: 480px) {
+
+  .userinfosection {
+    &__avatar-wrapper {
+      width: 60px;
+      height: 60px;
+    }
+  
+    &__username {
+      font-size: 18px;
+    }
+  }
+
+  .rating__value, .followers__value {
+    margin-left: 4px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  
+ 
+}

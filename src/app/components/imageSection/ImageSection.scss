@@ -1,10 +1,28 @@
 @import "../../main.scss";
 
+.modal__img-section {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.modal__username {
+  text-align: left;
+  font-size: $fz-strong;
+  font-weight: 400;
+  margin-bottom: 14px;
+  vertical-align: top;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
 .modal__img-wrapper {
-  height: 540px;
+  height: auto;
   min-width: 200px;
   max-width: 940px;
-  filter: drop-shadow(0 0 4px #a4a2a2ce)
+  filter: drop-shadow(0 0 4px #a4a2a2ce);
 }
 
 .modal__img {
@@ -20,15 +38,34 @@
   position: relative;
   display: flex;
   gap: 8px;
-  margin: -20px 0 0 -20px;
+  margin: -14px 0 0 -14px;
   z-index: 1;
 }
 
-.modal__like-btn {
-  //background-image: url("../../resources/images/heart-solid.png");
-  //background-color: #000;
+.modal__subscribe-btn {
+  @include text-btn(40px);
 }
+
 .modal__tags {
   margin-top: 10px;
   text-align: left;
+  
+}
+
+@media (min-width: 820px) {
+  .modal__img-section {
+    margin-bottom: 0px;
+  }
+
+  .modal__username {
+    padding-left: 18px;
+  }
+
+  .modal__img-block {
+    display: inline-block;
+  }
+
+  .modal__img-wrapper {
+    height: 450px;
+  }
 }

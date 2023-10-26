@@ -5,28 +5,30 @@
     border-radius: 22px;
     border: 1px solid $clr-border;
     background: $base-bg-clr;
-    //min-height: 506px;
     //height: 506px;
-    //height: 496px;
-    height: 486px;
+    height: 506px;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: start;
+
+    @media (min-width: 820px) {
+      & {
+        flex-direction: column-reverse;
+        justify-content: end;
+      }
+    }
 
     &.auction {
-      height: 438px;
+      height: 458px;
+      overflow-y: auto;
 
       & .modal__comments-list {
-        flex-direction: column;
         align-items: center;
         list-style-type: none;
-        justify-content: start;
         overflow-y: auto;
       }
 
       & .modal__comment {
-        min-width: 420px;
-    
         &--yours {
           align-self: center;
         }
@@ -53,19 +55,28 @@
   &__comments-list {
     overflow-y: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
+    flex-direction: column-reverse;
+    justify-content: end;
+
     align-items: flex-start;
+
+    @media (min-width: 820px) {
+      & {
+        flex-direction: column;
+        justify-content: start;
+      }
+    }
   }
 
   &__comment {
-    border-radius: 32px;
+    border-radius: 26px;
     border: 1px solid $clr-border;
     background: #f5f4f4;
-    margin: 12px 12px 0 12px;
+    margin: 8px 8px 0 8px;
     padding: 8px 16px;
     text-align: left;
-    max-width: 380px;
+    //max-width: 280px;
+    max-width: 80%;
     word-wrap: break-word;
     font-size: 16px;
     // overflow-wrap: break-word;
@@ -79,26 +90,6 @@
     }
   }
 
-  // &__bid {
-  //   border-radius: 32px;
-  //   border: 1px solid $clr-border;
-  //   background: #f5f4f4;
-  //   margin: 12px 12px 0 12px;
-  //   padding: 8px 16px;
-  //   text-align: left;
-  //   max-width: 480px;
-  //   word-wrap: break-word;
-  //   font-size: 16px;
-  //   // overflow-wrap: break-word;
-  //   // -webkit-hyphens: auto;
-  //   //     -ms-hyphens: auto;
-  //   //         hyphens: auto;
-
-  //   &--yours {
-  //     background-color: $clr-green;
-  //   }
-  // }
-
   &__comm-author {
     @extend %link;
     font-size: 14px;
@@ -107,7 +98,7 @@
   }
 
   &__start-bid-btn, &__min-incr-btn, &__auto-buy-btn {
+    @include text-btn(40px);
     font-size: 12px;
-    //margin-left: 6px;
   }
 }

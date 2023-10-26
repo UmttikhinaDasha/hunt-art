@@ -5,7 +5,12 @@ import Header from "./components/header/Header"
 import FeedsSwitcher from "./components/feedsSwitcher/FeedsSwitcher";
 import SearchComponent from "./components/searchComponent/SearchComponent";
 import {Gallery} from "./components/gallery/Gallery";
-import ArtInfoModalWindow from "./components/artInfoModalWindow/ArtInfoModalWindow";
+
+import ArtInfoMW from "./components/artInfoMW/ArtInfoMW";
+
+import Wallpaper from "./components/wallpaper/Wallpaper";
+import UserInfoSection from "./components/userInfoSection/UserInfoSection"
+import PriceListModalWindow from "./components/priceListModalWindow/PriceListModalWindow"
 
 function App() {
 
@@ -41,8 +46,8 @@ function App() {
 
 
   //modal-block----------------------------------------------------------
-  const [modalClose, setModalClose] = useState<boolean>(false);
-  const [imgSrc, setImgSrc] = useState<string>(''); //"./src/app/resources/images/default_hor.jpg"
+  const [modalClose, setModalClose] = useState<boolean>(true);
+  const [imgSrc, setImgSrc] = useState<string>("./src/app/resources/images/default_hor.jpg"); //"./src/app/resources/images/default_hor.jpg"
   const debounceImgSrc = useDebounce(imgSrc, 200);
 
   const onSetModalOpen = (imgSrc : string) => {
@@ -53,11 +58,22 @@ function App() {
   const onSetModalClose = () => {
     setModalClose(true);
   }
+
+
+  const [priceListModalClose, setPriceListModalClose] = useState<boolean>(true);
+
+  const onSetPriceListModalOpen = () => {
+    setPriceListModalClose(false);
+  }
+
+  const onSetPriceListModalClose = () => {
+    setPriceListModalClose(true);
+  }
   //end-modal-block------------------------------------------------------
 
   return (
     <>
-      <div className="tools-wrapper">
+      {/* <div className="tools-wrapper">
         <Header/>
         <SearchComponent onSetSearchValue={onSetSearchValue}
                         onSetIsPopupOpen={onSetIsPopupOpen}
@@ -67,7 +83,14 @@ function App() {
       </div>
       
       <Gallery onSetModalOpen={onSetModalOpen}/>
-      {modalClose ? null : <ArtInfoModalWindow imgSrc={debounceImgSrc} onSetModalClose={onSetModalClose}/>}
+      {modalClose ? null : <ArtInfoModalWindow imgSrc={debounceImgSrc} onSetModalClose={onSetModalClose}/>} */}
+
+      <Header/>
+      <Wallpaper/>
+      <UserInfoSection onSetModalOpen={onSetPriceListModalOpen}/>
+      <Gallery onSetModalOpen={onSetModalOpen}/>
+      {modalClose ? null : <ArtInfoMW imgSrc={debounceImgSrc} onSetModalClose={onSetModalClose}/>}
+      {priceListModalClose ? null : <PriceListModalWindow onSetModalClose={onSetPriceListModalClose}/>}
     </>
   )
 }

@@ -81,16 +81,17 @@ const CommentsField:FC<CommentsFieldProps> = (props) => {
   return (
     <div className={switcher ? "modal__comm-block" : "modal__comm-block auction"}>
 
-      <div className={switcher ? "modal__input-block" : 'modal__input-block hide'}>
-        <input type="text" className="modal__input" placeholder="Введите комментарий..." tabIndex={1}/>
-      </div>
-
-      <div className={switcher ? "modal__input-block hide" : 'modal__input-block'}>
-        <input type="number" className="modal__input" placeholder={`${min}`} tabIndex={1} min={min} max={max}/>
-        <button className="text-btn modal__start-bid-btn"  tabIndex={1}>sb</button>
-        <button className="text-btn modal__min-incr-btn"  tabIndex={1}>mi</button>
-        <button className="text-btn modal__auto-buy-btn"  tabIndex={1}>ab</button>
-      </div>
+      {switcher ? 
+        <div className="modal__input-block">
+          <input type="text" className="modal__input" placeholder="Введите комментарий..." tabIndex={1}/>
+        </div>
+      : <div className="modal__input-block">
+          <input type="number" className="modal__input" placeholder={`${min}`} tabIndex={1} min={min} max={max}/>
+          <button className="text-btn modal__start-bid-btn"  tabIndex={1}>sb</button>
+          <button className="text-btn modal__min-incr-btn"  tabIndex={1}>mi</button>
+          <button className="text-btn modal__auto-buy-btn"  tabIndex={1}>ab</button>
+        </div>
+      }
       
       {switcher ? renderComments() : renderBids()}
       

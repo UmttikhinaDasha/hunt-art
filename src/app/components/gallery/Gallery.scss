@@ -1,7 +1,8 @@
 @import "../../main.scss";
 
 .gallery {
-  margin: 145px 10px 15px 15px;
+  //margin: 145px 10px 15px 15px;
+  margin: 15px 10px 15px 15px;
 }
 
 .masonry { 
@@ -51,6 +52,7 @@
 
 @media (min-width: 520px) {  
   .gallery {
-    margin: 110px 10px 15px 15px;
+    //margin: 110px 10px 15px 15px;
+    margin: 10px 10px 15px 15px;
   }
 }
