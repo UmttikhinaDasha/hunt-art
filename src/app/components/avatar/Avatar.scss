@@ -1,0 +1,19 @@
+@import "../../main.scss";
+
+.avatar__wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: $clr-green;
+  overflow: hidden;
+  border: 1px solid $clr-border;
+}
+
+.avatar__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}

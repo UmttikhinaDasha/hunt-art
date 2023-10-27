@@ -1,0 +1,19 @@
+@import "../../main.scss";
+
+.interlocutor__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+}
+
+.interlocutor__username {
+  font-size: $fz-medium;
+  text-decoration: none;
+  color: #000;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}

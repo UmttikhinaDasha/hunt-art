@@ -28,6 +28,7 @@
     "react-masonry": "^1.0.7",
     "react-photo-album": "^2.3.0",
     "react-responsive-masonry": "^2.1.7",
+    "react-router-dom": "^6.17.0",
     "sass": "^1.66.1"
   },
   "devDependencies": {

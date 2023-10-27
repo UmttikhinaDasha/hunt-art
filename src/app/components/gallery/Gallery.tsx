@@ -3,26 +3,13 @@ import "./Gallery.scss";
 
 interface GalleryProps {
   onSetModalOpen?(imgSrc?: string): void;
+  clazzName?: string;
+  images?: object[];
 }
 
 export const Gallery:FC<GalleryProps> = (props) => {
 
-  const {onSetModalOpen} = props;
-
-  const [images, setImages] = useState<object[]>();
-
-  useEffect(() => {
-    
-    setImages(Array.from({length: 40}).map((_, index) => {
-      return {
-        id: index,
-        src:`https://picsum.photos/200/${Math.floor(
-          Math.random() * (300 - 200 + 1) + 200
-        )}`
-      }
-    }));
-
-  }, []);
+  const {onSetModalOpen, clazzName, images} = props;
 
   const renderGallery = () => {
 
@@ -39,7 +26,7 @@ export const Gallery:FC<GalleryProps> = (props) => {
   }
 
   return (
-    <div className="gallery">
+    <div className={"gallery " + clazzName}>
       <div className="masonry">
         {renderGallery()}
       </div>

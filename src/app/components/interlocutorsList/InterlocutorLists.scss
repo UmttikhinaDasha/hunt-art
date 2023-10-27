@@ -1,0 +1,18 @@
+@import "../../main.scss";
+
+.interlocutorsList {
+  margin-left: 0;
+  padding-left: 0
+}
+
+.interlocutor {
+  list-style-type: none;
+  border: 1px solid $clr-border;
+
+  &:hover {
+    background-color: $clr-gray;
+  }
+  &:focus, &:focus-visible, &:active {
+    background-color: $clr-green;
+  }
+}
